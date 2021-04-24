@@ -8,9 +8,9 @@ public class SmartPhone {
     private double priceOfPhone;
     private byte screenSize;
 
-    public SmartPhone(long imeiNumber, String nameofPhone, double priceOfPhone, byte screenSize) {
+    private SmartPhone(long imeiNumber, String nameOfPhone, double priceOfPhone, byte screenSize) {
         this.imeiNumber = imeiNumber;
-        this.nameOfPhone = nameofPhone;
+        this.nameOfPhone = nameOfPhone;
         this.priceOfPhone = priceOfPhone;
         this.screenSize = screenSize;
     }

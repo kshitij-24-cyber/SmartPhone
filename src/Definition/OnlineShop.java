@@ -32,7 +32,12 @@ public class OnlineShop {
 
     }
 
-
-
-
+    public SmartPhone searchPhone(Set<SmartPhone> smartPhones, long IMEINumber) {
+        for (SmartPhone smartPhone : smartPhones) {
+            if (smartPhone.getIMEInumber() == IMEINumber) {
+                return smartPhone;
+            }
+        }
+        return null;
+    }
 }

@@ -1,50 +1,43 @@
 package Definition;
 
+
 import java.util.Objects;
 
 public class SmartPhone {
-    private long imeiNumber;
-    private String nameOfPhone;
-    private double priceOfPhone;
-    private byte screenSize;
+    private final long IMEInumber;
+    private  final String PhoneName;
+    private Double price;
+    private byte ScreenSize;
 
-    private SmartPhone(long imeiNumber, String nameOfPhone, double priceOfPhone, byte screenSize) {
-        this.imeiNumber = imeiNumber;
-        this.nameOfPhone = nameOfPhone;
-        this.priceOfPhone = priceOfPhone;
-        this.screenSize = screenSize;
+    public SmartPhone(long IMEINumber, String phoneName, Double price, byte screenSize) {
+        this.IMEInumber = IMEINumber;
+        PhoneName = phoneName;
+        this.price = price;
+        ScreenSize = screenSize;
     }
 
-    public long getImeiNumber() {
-        return imeiNumber;
+    public long getIMEInumber() {
+        return IMEInumber;
     }
 
-    public void setImeiNumber(long imeiNumber) {
-        this.imeiNumber = imeiNumber;
+    public String getPhoneName() {
+        return PhoneName;
     }
 
-    public String getNameofPhone() {
-        return nameOfPhone;
+    public Double getPrice() {
+        return price;
     }
 
-    public void setNameofPhone(String nameofPhone) {
-        this.nameOfPhone = nameofPhone;
-    }
-
-    public double getPriceOfPhone() {
-        return priceOfPhone;
-    }
-
-    public void setPriceOfPhone(double priceOfPhone) {
-        this.priceOfPhone = priceOfPhone;
+    public void setPrice(Double price) {
+        this.price = price;
     }
 
     public byte getScreenSize() {
-        return screenSize;
+        return ScreenSize;
     }
 
     public void setScreenSize(byte screenSize) {
-        this.screenSize = screenSize;
+        ScreenSize = screenSize;
     }
 
     @Override
@@ -52,11 +45,21 @@ public class SmartPhone {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         SmartPhone that = (SmartPhone) o;
-        return imeiNumber == that.imeiNumber && Double.compare(that.priceOfPhone, priceOfPhone) == 0 && screenSize == that.screenSize && Objects.equals(nameOfPhone, that.nameOfPhone);
+        return IMEInumber == that.IMEInumber && ScreenSize == that.ScreenSize && Objects.equals(PhoneName, that.PhoneName) && Objects.equals(price, that.price);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(imeiNumber, nameOfPhone, priceOfPhone, screenSize);
+        return Objects.hash(IMEInumber, PhoneName, price, ScreenSize);
+    }
+
+    @Override
+    public String toString() {
+        return "SmartPhone{" +
+                "IMENumber=" + IMEInumber +
+                ", PhoneName='" + PhoneName + '\'' +
+                ", price=" + price +
+                ", ScreenSize=" + ScreenSize +
+                '}';
     }
 }
